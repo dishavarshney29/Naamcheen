@@ -2,6 +2,20 @@
 
 The client app for the Naamcheen platform.
 
+## Steps to run
+
+Install mongo version using brew
+brew services start mongodb-community@6.0
+Verify by running mongosh on terminal
+
+Go to client folder 
+Run npm install to build
+Run npm start and go to http://localhost:3000
+
+Go to server folder 
+Run npm install to build
+Run npm start and go to http://127.0.0.1:8080
+
 ## To-Do
 
 -   [x] Switch language
