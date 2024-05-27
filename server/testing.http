@@ -1,0 +1,113 @@
+### test farmer signup
+POST http://localhost:8080/api/auth/farmer/signup
+Content-Type: application/json
+
+{
+	"name": "Hanuman",
+	"password": "password",
+	"mobile": "9292929292",
+	"address": "221B, Ayodhya",
+	"lattitude": 28.6204793,
+	"longitude": 77.0679478
+}
+
+### test farmer login
+POST http://localhost:8080/api/auth/farmer/login
+Content-Type: application/json
+
+{
+	"password": "password",
+	"mobile": "9090909090"
+}
+
+### test buyer signup
+POST http://localhost:8080/api/auth/buyer/signup
+Content-Type: application/json
+
+{
+	"name": "Raavan",
+	"password": "password",
+	"mobile": "9393939393",
+	"address": "221B, Baker Street, Hyderabad",
+	"lattitude": 38.6204312,
+	"longitude": 70.0679318
+}
+
+### test buyer login
+POST http://localhost:8080/api/auth/buyer/login
+Content-Type: application/json
+
+{
+	"password": "password",
+	"mobile": "9090909091"
+}
+
+### add listing
+POST http://localhost:8080/api/listing
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MTkxOTE5MTkxIiwiaWQiOiI1ZTQ1NTBjYWNhNDdjZTRhYzVmYmI4YjciLCJpYXQiOjE1ODE2MDA5ODAsImV4cCI6MTU4MjIwNTc4MH0.azzZ3sj4WgBEN1ipcy6U-gDSSss8QMFZBUW9C1m-xSc
+
+{
+	"name": "Wheat",
+	"price": 212,
+	"image": "/upload/byav.jpg",
+	"quantity": 22,
+	"quality": 83.32
+}
+
+### get listings
+GET http://localhost:8080/api/listing
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkxIiwiaWQiOiI1ZTQ1MjkxMDE4ZDY5YTJiMTc1YzdiNGMiLCJpYXQiOjE1ODE2MDI0OTIsImV4cCI6MTU4MjIwNzI5Mn0.67Vh4Wx94a7adRe8fSWYNT9rjvpOySBj1xwDsSB8VVs
+
+### get listings
+GET http://localhost:8080/api/listing/5e45500fca47ce4ac5fbb8af
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkxIiwiaWQiOiI1ZTQ1MjkxMDE4ZDY5YTJiMTc1YzdiNGMiLCJpYXQiOjE1ODE2MDI0OTIsImV4cCI6MTU4MjIwNzI5Mn0.67Vh4Wx94a7adRe8fSWYNT9rjvpOySBj1xwDsSB8VVs
+
+### get farmer listings
+GET http://localhost:8080/api/listing/farmer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
+
+### test order
+POST http://localhost:8080/api/order
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkxIiwiaWQiOiI1ZTQ1MjkxMDE4ZDY5YTJiMTc1YzdiNGMiLCJpYXQiOjE1ODE2MDI0OTIsImV4cCI6MTU4MjIwNzI5Mn0.67Vh4Wx94a7adRe8fSWYNT9rjvpOySBj1xwDsSB8VVs
+
+{
+	"listingID": "5e45500fca47ce4ac5fbb8af",
+	"quantity": 1
+}
+
+### test farmer orders
+GET http://localhost:8080/api/order/farmer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
+
+### test buyer orders
+GET http://localhost:8080/api/order/buyer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkxIiwiaWQiOiI1ZTQ1MjkxMDE4ZDY5YTJiMTc1YzdiNGMiLCJpYXQiOjE1ODE2MDI0OTIsImV4cCI6MTU4MjIwNzI5Mn0.67Vh4Wx94a7adRe8fSWYNT9rjvpOySBj1xwDsSB8VVs
+
+
+### test add question
+POST http://localhost:8080/api/question
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
+
+{
+	"question": "What is the capital of China?"
+}
+
+### test get question
+GET http://localhost:8080/api/question/5e457f040223ca09ae3e5d0a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
+
+### test add answer
+POST http://localhost:8080/api/question/5e4575722e8f187ab7fb6715/answer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
+
+{
+	"answer": "Delhi is the capital of India"
+}
+
+### test question feed
+GET http://localhost:8080/api/question
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI5MDkwOTA5MDkwIiwiaWQiOiI1ZTQ1MjZiZjBjZTg2NzI2MWVmZTUzOWEiLCJpYXQiOjE1ODE2MDgwNDAsImV4cCI6MTU4MjIxMjg0MH0.CVuKmqNKpHwvQ5kSdGiHCsnFb-t2MediedmLE_miAAo
