@@ -8,6 +8,9 @@ Install mongo version using brew
 brew services start mongodb-community@6.0
 Verify by running mongosh on terminal
 
+You can restore mongo data dump taken by previous project owners using command:
+mongorestore --db <your_database_name/naamcheen> </path_to_output_directory/your_database_name//Users/iamdisha/Downloads/Naamcheen/mongodump>
+
 Go to client folder 
 Run npm install to build
 Run npm start and go to http://localhost:3000
